@@ -6,6 +6,10 @@ public class HTMLFilteredReader extends MySimpleURLReader{
         super(url);
     }
 
+    /**
+     * method that return only the text, without the html
+     * @return content
+     */
     public String getPageContents(){
         String[] links = super.getLinks();
         String content = getUnfilteredPageContents();
@@ -35,8 +39,13 @@ public class HTMLFilteredReader extends MySimpleURLReader{
         return content;
     }
 
+    /**
+     * Method that returns page contents without excluding any syntax that belongs to web design.
+     * @return page_content
+     */
     public String getUnfilteredPageContents(){
-        return super.getPageContents();
+        String page_content = super.getPageContents();
+        return page_content;
     }
 
 }

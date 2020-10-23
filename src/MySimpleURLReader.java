@@ -5,15 +5,22 @@ import java.util.ArrayList;
 public class MySimpleURLReader extends SimpleURLReader {
 
     String url;
-
+    //Constructor
     public MySimpleURLReader(String url){
         super(url);
         this.url = url;
     }
+    /**
+     * Method that returns the url String used to create the SimpleURLReader object
+     * @return url url
+     */
     public String getURL(){
         return url;
     }
-
+    /**
+     * Method that returns the filename part of the url
+     * @return name name of the file
+     */
     public String getName(){
         int last_index = url.lastIndexOf('/');
 
@@ -47,7 +54,10 @@ public class MySimpleURLReader extends SimpleURLReader {
         return link_list;
     }
 
-
+    /**
+     * Method that counts the number of css files in a website
+     * @return num_css number of css files
+     */
     public int getNumberOfCSSLinks() {
         String[] html_link = getLinks();
 
@@ -59,7 +69,10 @@ public class MySimpleURLReader extends SimpleURLReader {
         }
         return num_css;
     }
-
+    /**
+     * Method that returns the css file names
+     * @return css
+     */
     public String[] getCSSLinks(){
         int num_css = getNumberOfCSSLinks();
         String[] html_link = getLinks();
